@@ -1,0 +1,19 @@
+<div class="container">
+<h1>My list of Restaurants</h1>
+  <% @restaurants.each do |resto|%>
+  <div class="row">
+    <div class="col">
+      <p><strong><%= resto.name %></strong></p>
+      <p><%= resto.category %></p>
+    </div>
+    <div class="col">
+      <p><%= link_to 'View Restaurant', "/restaurants/#{resto.id}" %></p>
+      <p><%= link_to 'Add Review', "/restaurants/#{resto.id}/reviews/new" %></p>
+      <p><%= link_to 'Delete Restaurant', "#" %></p>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="btn btn-primary"><%= link_to "Add new restaurant", "/restaurants/new" %></div>
+</div>
+
